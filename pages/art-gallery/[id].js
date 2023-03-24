@@ -87,7 +87,7 @@ const DetailPage = (props) => {
 
                     <div className=" md-12 clearfix mx-auto clearfix  md:flex-row items-center my-12 md:my-24">
                         {addionalData.map((item, index) => (
-                            <React.Fragment key={idex}> <Accordion isComponents={item.isComponents} title={item.title} content={item.content} /> </React.Fragment>
+                            <React.Fragment key={index}> <Accordion isComponents={item.isComponents} title={item.title} content={item.content} /> </React.Fragment>
                         ))}
                     </div>
 
