@@ -1,5 +1,4 @@
 import { searchArtGallery } from '@/api';
-import { filterArtGallery } from '@/store/action';
 import { FILTER_ART_GALLERY } from '@/store/constant';
 import { store } from '@/store/store';
 
