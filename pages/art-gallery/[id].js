@@ -72,40 +72,40 @@ const DetailPage = (props) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className=''={styles.main}>
-            <Navigation></Navigation>
-            <div className='container mx-auto flex flex-col'>
-                <DetailPageBannerNew data={props.result} ></DetailPageBannerNew>
+            <main className={styles.main}>
+                <Navigation></Navigation>
+                <div className='container mx-auto flex flex-col'>
+                    <DetailPageBannerNew data={props.result} ></DetailPageBannerNew>
 
-                <div className=" mx-auto flex flex-col md:flex-row items-center ">
-                    <div className=" w-full  lg:w-2/2  text-center mt-8">
-                        <h1 className="text-3xl mt-8 lg:text-4xl xl:text-5xl font-medium text-black-600 leading-normal">{props.result.artName} <strong></strong>. </h1>
-                        <p className="text-black-500 mt-4 mb-6 ">{props.result.artistName}</p>
-                        <p className="text-black-500 mt-4 mb-6">{props.result.location}</p>
+                    <div className=" mx-auto flex flex-col md:flex-row items-center ">
+                        <div className=" w-full  lg:w-2/2  text-center mt-8">
+                            <h1 className="text-3xl mt-8 lg:text-4xl xl:text-5xl font-medium text-black-600 leading-normal">{props.result.artName} <strong></strong>. </h1>
+                            <p className="text-black-500 mt-4 mb-6 ">{props.result.artistName}</p>
+                            <p className="text-black-500 mt-4 mb-6">{props.result.location}</p>
+                        </div>
                     </div>
-                </div>
 
-                <div className=" md-12 clearfix mx-auto clearfix  md:flex-row items-center my-12 md:my-24">
-                    {addionalData.map(item => (
-                        <Accordion isComponents={item.isComponents} title={item.title} content={item.content} />
-                    ))}
-                </div>
-
-                <div className=" mx-auto flex flex-col md:flex-row items-center ">
-                    <div className=" w-full  lg:w-2/2  text-center">
-                        <h4 className='text-3xl'>Recent Works!</h4>
+                    <div className=" md-12 clearfix mx-auto clearfix  md:flex-row items-center my-12 md:my-24">
+                        {addionalData.map((item, index) => (
+                            <React.Fragment key={idex}> <Accordion isComponents={item.isComponents} title={item.title} content={item.content} /> </React.Fragment>
+                        ))}
                     </div>
-                </div>
 
-                {props.latestResult && props.latestResult.length > 0 && <div className='mx-auto max-w-7xl px-6 lg:px-8 mt-24 mb-24'>
-                    <div className='grid grid-cols-3 gap-4 content-start'>
-                        {props.latestResult?.map((item) => <React.Fragment key={item.id}>  <CardComponent data={item}></CardComponent>  </React.Fragment>)}
+                    <div className=" mx-auto flex flex-col md:flex-row items-center ">
+                        <div className=" w-full  lg:w-2/2  text-center">
+                            <h4 className='text-3xl'>Recent Works!</h4>
+                        </div>
                     </div>
-                </div>}
 
-            </div>
-            <Footer></Footer>
-        </main>
+                    {props.latestResult && props.latestResult.length > 0 && <div className='mx-auto max-w-7xl px-6 lg:px-8 mt-24 mb-24'>
+                        <div className='grid grid-cols-3 gap-4 content-start'>
+                            {props.latestResult?.map((item) => <React.Fragment key={item.id}>  <CardComponent data={item}></CardComponent>  </React.Fragment>)}
+                        </div>
+                    </div>}
+
+                </div>
+                <Footer></Footer>
+            </main>
         </>
     )
 }
