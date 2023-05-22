@@ -119,7 +119,6 @@ export async function getServerSideProps(context) {
             id: Number(id)
         }
     });
-
     let latestResult = await prisma.artGallery.findMany({
         orderBy: [
             {
